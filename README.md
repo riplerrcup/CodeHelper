@@ -40,3 +40,6 @@ CodeHelper is an AI-powered code analysis tool built with Flask and the Google G
 3. Enter your Google Gemini API Key.
 4. Select the desired analysis options (README, Debug, Suggest).
 5. Drag and drop your project files and click **Generate**.
+
+## P.s.
+The whole readme is genetated with this tool :)
