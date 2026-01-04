@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeHelper</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.8.1/github-markdown.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔮 CodeHelper 🔮</h1>
+        <p style="text-align: center; color: #666;">
+            AI-powered coding assistant using Google Gemini
+        </p>
+
+        <form id="uploadForm">
+            <label><strong>Select what you want to generate:</strong></label>
+
+            <div class="options-group">
+                <label>
+                    <input type="checkbox" class="prompt_type" value="readme">
+                    README.md
+                </label>
+                <label>
+                    <input type="checkbox" class="prompt_type" value="debug">
+                    Debugging help
+                </label>
+                <label>
+                    <input type="checkbox" class="prompt_type" value="suggest">
+                    Improvement suggestions
+                </label>
+            </div>
+
+            <label for="api-key">
+                <strong>Google AI Studio API Key:</strong>
+            </label>
+
+            <input
+                type="password"
+                id="api-key"
+                placeholder="Enter your Gemini API key here"
+                required
+            >
+
+            <div
+                class="file-input-wrapper"
+                onclick="document.getElementById('files').click()"
+            >
+                <p>📁 Click or drag files here</p>
+                <p style="color: #666; font-size: 14px;">
+                    You can upload multiple files (code, configs, images, etc.)
+                </p>
+                <input type="file" id="files" name="files" multiple>
+            </div>
+
+            <div id="file-list"></div>
+
+            <button type="submit" id="submitBtn">Generate</button>
+        </form>
+
+        <div id="loader">
+            Processing answer... This may take up to 2 minutes.
+        </div>
+
+        <div id="response"></div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
